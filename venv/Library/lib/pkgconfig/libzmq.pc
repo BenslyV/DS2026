@@ -1,0 +1,12 @@
+prefix=c:/DS2026/Python/venv/Library
+exec_prefix=c:/DS2026/Python/venv/Library
+libdir=c:/DS2026/Python/venv/Library/lib
+includedir=c:/DS2026/Python/venv/Library/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 4.3.5
+Libs: -L${libdir} -lzmq
+Libs.private: 
+Requires.private: 
+Cflags: -I${includedir} 
