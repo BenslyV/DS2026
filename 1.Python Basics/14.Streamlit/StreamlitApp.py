@@ -51,3 +51,5 @@ input_val = st.number_input("Enter value")
 if st.button("Predict"):
     result = model.predict([[input_val]])
     st.write(result)
+
+#Git Changes Sync Check
