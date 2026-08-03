@@ -8,3 +8,8 @@ matplotlib
 streamlit
 scikeras
 nltk
+langchain
+langchain-openai
+langsmith
+python-dotenv
+langchain-google-genai
