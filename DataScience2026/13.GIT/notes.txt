@@ -1,0 +1,137 @@
+tep 2: Make changes
+
+Create a file:
+
+notes.txt
+
+Then:
+
+git add .
+git commit -m "Add Git learning notes"
+
+Now the branches look like this:
+
+main
+ │
+ │
+ └──────── bensly_learning
+              │
+              └── Add Git learning notes
+
+Notice that only bensly_learning has the new commit.
+
+Step 3: Push only the new branch
+git push -u origin bensly_learning
+
+Now GitHub has:
+
+origin/main
+
+origin/bensly_learning
+
+Nothing has changed on main.
+
+Step 4: Create a Pull Request
+
+On GitHub:
+
+Base branch:
+main
+
+Compare branch:
+bensly_learning
+
+GitHub compares:
+
+main
+
+with
+
+bensly_learning
+
+It sees:
+
+"This branch has 1 new commit that isn't in main."
+
+That's what a Pull Request is showing.
+
+Step 5: Merge the Pull Request
+
+When you click Merge Pull Request, GitHub does the equivalent of:
+
+git switch main
+git merge bensly_learning
+
+on the remote repository.
+
+After the merge:
+
+main
+ │
+ ├── Initial Project
+ │
+ └── Add Git learning notes
+
+bensly_learning
+ │
+ └── Add Git learning notes
+
+Now both branches contain the same commit.
+
+Step 6: Delete the feature branch
+
+Since its work is now in main, it's common to delete it.
+
+Next time you start a new task, create another fresh branch.
+
+Why don't developers keep using the same branch?
+
+Imagine using one branch (bensly) for months:
+
+bensly
+
+Commit 1
+Commit 2
+Commit 3
+Commit 4
+Commit 5
+Commit 6
+Commit 7
+
+When you create a PR, reviewers see all those commits, even if they belong to different tasks. That makes reviewing much harder.
+
+Instead, companies usually create a new branch for each task:
+
+main
+│
+├── feature/login
+├── feature/payment
+├── feature/profile
+├── bugfix/login-error
+└── hotfix/crash
+
+Each branch contains only the commits for one feature or bug fix.
+
+I recommend you practice exactly this
+
+Create a brand-new branch:
+
+git switch main
+git pull
+git switch -c bensly_learning
+
+Add a new file such as:
+
+git_pr_learning.txt
+
+Then:
+
+git add .
+git commit -m "Practice Pull Request workflow"
+git push -u origin bensly_learning
+
+Finally, create a PR from bensly_learning → main.
+
+This is the cleanest way to learn the workflow because the PR will contain only your new changes, making it easy to understand exactly what is being merged.
+
+This is also the same workflow you'll encounter in most professional software development teams.
